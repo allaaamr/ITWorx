@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 
-const createToken = (user)=> {
+const createToken = (user, type)=> {
     //sign() creates a token containing all the data you need in the front-end
-    const token = jwt.sign(user.id, "" + process.env.SECRET);
+    const token = jwt.sign({id: user.id}, "" + process.env.SECRET);
     return token;
 };
 
